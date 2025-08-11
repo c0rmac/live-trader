@@ -1,7 +1,7 @@
 variable "project_id" {
   description = "The Google Cloud project ID where resources will be deployed."
   type        = string
-  default     = "live-trader"
+  default     = "live-trader-468613"
 }
 
 variable "region" {
