@@ -104,7 +104,7 @@ def run_live_trading_simulation():
 
     # 6. Add tasks to the Runner's schedule.
     # The DataStream will "tick" every 5 minutes (300 seconds).
-    runner.add_task(data_stream_task, interval_minutes=5, align_to_clock=True)
+    runner.add_task(data_stream_task, interval_minutes=1, align_to_clock=True)
 
     # The PredictionModel will run once a day at 23:55.
     runner.add_task(prediction_task, at_time="23:55")

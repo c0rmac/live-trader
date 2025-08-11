@@ -186,7 +186,7 @@ class DataStream:
                     end_time = start_time + timedelta(hours=5)  # Ensure overlap with previous batch
                     start_time = end_time - timedelta(hours=interval_hours - 5)  # Step back while maintaining overlap
 
-                    print(f"Interval: {end_time} <=> {start_time}")
+                    # print(f"Interval: {end_time} <=> {start_time}")
 
                     pages_counted += 1
 
@@ -255,6 +255,10 @@ class DataStream:
                     retries += 1
                     delay = base_delay  # Exponential backoff
                     time.sleep(delay)
+
+                if retries == max_retries:
+                    print(f"Max retries reached for {asset_id}. Moving to next iteration.")
+                    break  # Stop fetching if max retries are exceeded
 
     def get_historical_prices(self, earliest_date: datetime) -> dict[str, pd.DataFrame]:
         """

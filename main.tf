@@ -33,7 +33,7 @@ resource "google_compute_instance" "python_app_vm" {
 
     echo "Updating system and installing dependencies..."
     apt-get update
-    apt-get install -y python3-pip git wget unzip build-essential
+    apt-get install -y python3-pip git wget unzip build-essential git-lfs
 
     echo "Downloading and installing TA-Lib C library..."
     wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz
@@ -47,6 +47,12 @@ resource "google_compute_instance" "python_app_vm" {
     echo "Cloning application from Git repository..."
     git clone "${var.git_repo_url}" /opt/app
     cd /opt/app
+
+    # --- ADD LFS PULL STEPS ---
+    echo "Setting up Git LFS and pulling large files..."
+    git lfs install
+    git lfs pull
+    # --- END LFS PULL STEPS ---
 
     echo "Installing Python requirements..."
     cd src
