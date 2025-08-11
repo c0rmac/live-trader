@@ -1,5 +1,5 @@
 # Ignore the local assets directory
-/src/assets/
+/src/assets/**
 
 # Terraform-specific
 .terraform/
