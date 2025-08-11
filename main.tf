@@ -49,10 +49,11 @@ resource "google_compute_instance" "python_app_vm" {
     cd /opt/app
 
     echo "Installing Python requirements..."
-    pip3 install -r src/requirements.txt
+    cd src
+    pip3 install -r requirements.txt
 
     echo "Starting the main Python script from the src directory..."
-    nohup python3 src/main.py &
+    nohup python3 main.py &
   EOT
 
   # Defines the VM's permissions
