@@ -3,5 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="lln-crypto-strategy" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="lln-crypto-strategy" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="live-trader" project-jdk-type="Python SDK" />
 </project>

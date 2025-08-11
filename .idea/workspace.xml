@@ -5,12 +5,61 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd5669e7-9bc9-47b0-abbb-5bc3ea28ed9e" name="Changes" comment="second commit">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/live-trader.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/transformed_coins.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/breakout_detection3/modelgen.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/dataloader.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/datapreprocess.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/signals.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/airswap_cluster.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/models/airswap_cluster.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/airswap_model.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/models/airswap_model.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/arbitrum_cluster.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/models/arbitrum_cluster.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/arbitrum_model.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/models/arbitrum_model.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/bonk_cluster.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/models/bonk_cluster.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/bonk_model.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/models/bonk_model.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/chainlink_cluster.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/models/chainlink_cluster.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/chainlink_model.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/models/chainlink_model.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/decentraland_cluster.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/models/decentraland_cluster.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/decentraland_model.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/models/decentraland_model.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/dogwifcoin_cluster.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/models/dogwifcoin_cluster.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/dogwifcoin_model.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/models/dogwifcoin_model.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/floki-inu_cluster.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/models/floki-inu_cluster.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/floki-inu_model.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/models/floki-inu_model.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/near_cluster.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/models/near_cluster.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/near_model.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/models/near_model.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/nervos-network_cluster.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/models/nervos-network_cluster.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/nervos-network_model.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/models/nervos-network_model.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/open-campus_cluster.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/models/open-campus_cluster.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/open-campus_model.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/models/open-campus_model.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/pepe_cluster.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/models/pepe_cluster.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/pepe_model.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/models/pepe_model.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/sui_cluster.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/models/sui_cluster.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/sui_model.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/models/sui_model.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/wax_cluster.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/models/wax_cluster.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/wax_model.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/models/wax_model.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/datastream.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/datastream.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/predictor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/predictor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test_trader.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/test_trader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test_trader2.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/test_trader2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/variables.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -37,8 +86,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.main.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "/Users/cormaccinnsealach/Projects/live-trader/src/assets",
     "node.js.detected.package.eslint": "true",
@@ -53,10 +104,43 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/assets" />
       <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/data" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/breakout_detection3" />
+      <recent name="$PROJECT_DIR$/src/assets/models" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="live-trader" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -77,7 +161,7 @@
       <workItem from="1754827832562" duration="9030000" />
       <workItem from="1754839331477" duration="344000" />
       <workItem from="1754859423040" duration="16000" />
-      <workItem from="1754859449995" duration="2466000" />
+      <workItem from="1754859449995" duration="11576000" />
     </task>
     <task id="LOCAL-00001" summary="second commit">
       <option name="closed" value="true" />
@@ -111,7 +195,23 @@
       <option name="project" value="LOCAL" />
       <updated>1754908946573</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="second commit">
+      <option name="closed" value="true" />
+      <created>1754909323487</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1754909323487</updated>
+    </task>
+    <task id="LOCAL-00006" summary="second commit">
+      <option name="closed" value="true" />
+      <created>1754909762741</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1754909762741</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,5 +231,19 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="second commit" />
     <option name="LAST_COMMIT_MESSAGE" value="second commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/main.py</url>
+          <line>49</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/live_trader$main.coverage" NAME="main Coverage Results" MODIFIED="1754921143975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>

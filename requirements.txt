@@ -1,0 +1,12 @@
+pandas
+numpy
+ccxt
+requests
+schedule
+joblib
+tqdm
+matplotlib
+TA-Lib
+ta
+scikit-learn
+xgboost

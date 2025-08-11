@@ -7,9 +7,9 @@ import os
 import random
 from datetime import datetime, timedelta, time
 
-from breakout_detection3 import dataloader, datapreprocess
-from live_trade.api_executor import ApiExecutor
-from live_trade.tools import generate_candles, generate_candles_with_indicators
+from data import dataloader, datapreprocess
+from api_executor import ApiExecutor
+from tools import generate_candles, generate_candles_with_indicators
 from livetrader import LiveTrader
 from datastream import PriceTick
 from predictor import Predictor  # Import the new Predictor class

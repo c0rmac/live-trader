@@ -1,6 +1,7 @@
 variable "project_id" {
   description = "The Google Cloud project ID where resources will be deployed."
   type        = string
+  default     = "live-trader"
 }
 
 variable "region" {
@@ -12,5 +13,6 @@ variable "region" {
 variable "git_repo_url" {
   description = "The URL of the Git repository containing your Python application."
   type        = string
+  default     = "https://github.com/c0rmac/live-trader.git"
   # Example: "https://github.com/your-username/your-repo.git"
 }

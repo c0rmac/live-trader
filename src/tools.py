@@ -3,7 +3,7 @@ import statistics
 import numpy as np
 import pandas as pd
 
-from breakout_detection3 import dataloader, datapreprocess
+from data import dataloader, datapreprocess
 
 
 def generate_candles(df: pd.DataFrame, interval: str = '1d'):

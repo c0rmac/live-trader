@@ -9,7 +9,7 @@ from datetime import datetime, timedelta, time
 
 # Assuming these are custom user modules that exist in the environment
 # from breakout_detection3 import dataloader, datapreprocess
-from live_trade.tools import generate_candles, generate_candles_with_indicators
+from tools import generate_candles, generate_candles_with_indicators
 
 from livetrader import LiveTrader
 from datastream import PriceTick

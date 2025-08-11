@@ -21,7 +21,7 @@ def convert_timestamp_to_local(ts, local_offset_hours=2):
     dt_local = dt_utc + timedelta(hours=local_offset_hours)  # Apply offset
     return dt_local.strftime('%Y-%m-%d %H:%M:%S')
 
-def load_transformed_coins_pickle(file_path="../transformed_coins.pkl"):
+def load_transformed_coins_pickle(file_path="./assets/transformed_coins.pkl"):
     """Loads transformed coins from a pickle file."""
     try:
         with open(file_path, "rb") as f:

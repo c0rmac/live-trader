@@ -5,8 +5,8 @@ import statistics
 import numpy as np
 import pandas as pd
 
-from breakout_detection3 import dataloader, datapreprocess
-from live_trade.tools import generate_candles
+from data import dataloader, datapreprocess
+from tools import generate_candles
 
 
 class Predictor:
@@ -29,8 +29,8 @@ class Predictor:
             return None
 
     def extract_data(self, name):
-        optimal_cluster = self.load_transformed_coins_pickle(f"../models/{name}_cluster.pkl")
-        models = self.load_transformed_coins_pickle(f"../models/{name}_model.pkl")
+        optimal_cluster = self.load_transformed_coins_pickle(f"./assets/models/{name}_cluster.pkl")
+        models = self.load_transformed_coins_pickle(f"./assets/models/{name}_model.pkl")
 
         return optimal_cluster, models
 
