@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Black">
+    <option name="sdkName" value="lln-crypto-strategy" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="lln-crypto-strategy" project-jdk-type="Python SDK" />
+</project>
