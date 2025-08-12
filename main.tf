@@ -31,6 +31,10 @@ resource "google_compute_instance" "python_app_vm" {
     sleep 10
     exec > >(tee /var/log/startup-script.log|logger -t startup-script -s 2>/dev/console) 2>&1
 
+    # --- SET TIMEZONE TO GERMANY ---
+    echo "Setting timezone to Europe/Berlin..."
+    timedatectl set-timezone Europe/Berlin
+
     echo "Updating system and installing dependencies..."
     apt-get update
     apt-get install -y python3-pip git wget unzip build-essential git-lfs
