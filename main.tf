@@ -73,3 +73,22 @@ resource "google_compute_instance" "python_app_vm" {
 
   depends_on = [google_project_service.compute_api]
 }
+
+# 🧱 NEW: Firewall rule to allow HTTP traffic
+resource "google_compute_firewall" "allow_http" {
+  name    = "live-trader-allow-http"
+  network = "default"
+
+  allow {
+    protocol = "tcp"
+    ports    = ["8000"]
+  }
+
+  source_ranges = ["0.0.0.0/0"]
+  target_tags   = ["http-server"]
+}
+
+# (Optional but recommended) Firewall rule for remote debugging
+resource "google_compute_firewall" "debug_allow_ssh" {
+  # ... your existing debug firewall rule ...
+}

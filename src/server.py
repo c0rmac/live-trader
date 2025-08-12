@@ -36,7 +36,7 @@ class StatusServer:
     a full JSON representation of a LiveTrader instance.
     """
 
-    def __init__(self, live_trader: LiveTrader, host='localhost', port=8000):
+    def __init__(self, live_trader: LiveTrader, host='0.0.0.0', port=8000):
         self.live_trader = live_trader
         self.host = host
         self.port = port
