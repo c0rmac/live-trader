@@ -1,3 +1,4 @@
+import os
 import random
 import time
 # In a real application, you would install and import the ccxt library:
@@ -10,9 +11,9 @@ class ApiExecutor:
     A class to handle the execution of trades with external exchange APIs.
     This class is designed to be a realistic implementation using the ccxt library structure.
     """
-    ALLOWED_EXCHANGES = ['binance', 'coinbase', 'kraken', 'kucoin']
+    ALLOWED_EXCHANGES = ['binance', 'coinbase']
 
-    def __init__(self, asset_universe_ids=None, api_keys=None, simulation_mode=True, trading_fee_percent=0.001,
+    def __init__(self, asset_universe_ids=None, simulation_mode=False, trading_fee_percent=0.001,
                  slippage_percent=0.0005):
         """
         Initializes the ApiExecutor.
@@ -28,8 +29,24 @@ class ApiExecutor:
         self.asset_universe = {}  # This will be built dynamically
         self.coin_id_to_symbol = {}  # Cache for converting IDs to symbols
 
+        api_keys = self._load_api_keys_from_env()
         self._connect_to_exchanges(api_keys or {})
         self._build_asset_universe(asset_universe_ids or [])
+
+    def _load_api_keys_from_env(self):
+        keys = {}
+        for exchange in self.ALLOWED_EXCHANGES:
+            api_key = os.getenv(f"{exchange.upper()}_API_KEY")
+            secret_key = os.getenv(f"{exchange.upper()}_SECRET_KEY")
+
+            if api_key and secret_key:
+                keys[exchange] = {
+                    'apiKey': api_key,
+                    'secret': secret_key
+                }
+            else:
+                print(f"  - WARNING: Missing API credentials for {exchange}.")
+        return keys
 
     def _connect_to_exchanges(self, api_keys):
         """

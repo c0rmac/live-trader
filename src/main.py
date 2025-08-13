@@ -45,7 +45,10 @@ class PredictionTask(Runnable):
             timestamp=datetime.now()
         )
 
-        self.data_stream.update_tracked_assets(predicted_coins)
+        print(f"Predicted Coins: {','.join(map(str, predicted_coins))}")
+
+        if self.live_trader.can_process_predictions():
+            self.data_stream.update_tracked_assets(predicted_coins)
         self.live_trader.process_predictions(predicted_coins)
 
 

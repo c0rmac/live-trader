@@ -1,4 +1,6 @@
 import time
+import traceback
+
 import schedule
 from datetime import datetime
 
@@ -35,7 +37,13 @@ class Runner:
         :param align_to_clock: If True, aligns the interval task to the clock
                                (e.g., for a 5-minute interval, runs at HH:00, HH:05, HH:10).
         """
-        job_func = runnable.tick
+        def wrapped_tick():
+            try:
+                runnable.tick()
+            except Exception as e:
+                traceback.print_exc()
+
+        job_func = wrapped_tick
 
         if interval_minutes:
             if align_to_clock:

@@ -12,6 +12,8 @@ resource "google_compute_instance" "python_app_vm" {
   machine_type = "e2-small"
   zone         = "${var.region}-a"
 
+  tags = ["http-server"] # <-- ADD THIS LINE
+
   # Configures the boot disk with a Debian 11 OS image
   boot_disk {
     initialize_params {
@@ -47,6 +49,21 @@ resource "google_compute_instance" "python_app_vm" {
     make
     make install
     cd ..
+
+    # --- INJECT SECRETS AS ENVIRONMENT VARIABLES ---
+    echo "Fetching secrets from Secret Manager..."
+    export BINANCE_API_KEY=$(gcloud secrets versions access latest --secret="BINANCE_API_KEY")
+    export BINANCE_SECRET_KEY=$(gcloud secrets versions access latest --secret="BINANCE_SECRET_KEY")
+
+    # export COINBASE_API_KEY=$(gcloud secrets versions access latest --secret="COINBASE_API_KEY")
+    # export COINBASE_SECRET_KEY=$(gcloud secrets versions access latest --secret="COINBASE_SECRET_KEY")
+
+    # export KRAKEN_API_KEY=$(gcloud secrets versions access latest --secret="KRAKEN_API_KEY")
+    # export KRAKEN_SECRET_KEY=$(gcloud secrets versions access latest --secret="KRAKEN_SECRET_KEY")
+
+    # export KUCOIN_API_KEY=$(gcloud secrets versions access latest --secret="KUCOIN_API_KEY")
+    # export KUCOIN_SECRET_KEY=$(gcloud secrets versions access latest --secret="KUCOIN_SECRET_KEY")
+    # --- SECRETS ARE NOW IN THE ENVIRONMENT ---
 
     echo "Cloning application from Git repository..."
     git clone "${var.git_repo_url}" /opt/app
@@ -86,9 +103,4 @@ resource "google_compute_firewall" "allow_http" {
 
   source_ranges = ["0.0.0.0/0"]
   target_tags   = ["http-server"]
-}
-
-# (Optional but recommended) Firewall rule for remote debugging
-resource "google_compute_firewall" "debug_allow_ssh" {
-  # ... your existing debug firewall rule ...
 }

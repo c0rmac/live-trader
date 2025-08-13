@@ -172,6 +172,8 @@ class LiveTrader:
         self.MAX_CYCLE_DURATION = timedelta(days=7)
         self.REINVESTMENT_WINDOW = timedelta(days=4)
 
+        self.last_price_updated = None
+
         self.sell_at_trigger_price = sell_at_trigger_price
 
         self.consecutive_cycle_losses = 0
@@ -188,6 +190,9 @@ class LiveTrader:
     def current_budget(self):
         """Returns the appropriate budget object based on the current mode."""
         return self.paper_budget if self.dry_run_mode else self.live_budget
+
+    def can_process_predictions(self):
+        return len(self.assets) == 0
 
     def process_predictions(self, coins_to_trade, current_time=None):
         now = current_time or datetime.now()
@@ -247,6 +252,7 @@ class LiveTrader:
     def receive_next_price_tick(self, price_tick, current_time=None):
         now = current_time or datetime.now()
         self.latest_prices[price_tick.asset_id] = price_tick.price
+        self.last_price_updated = now
 
         if self.dry_run_mode:
             self._check_for_dry_run_conversion(current_time=now)
