@@ -10,12 +10,14 @@ from server import StatusServer  # Import the new StatusServer
 class DataStreamTask(Runnable):
     """A Runnable wrapper for the DataStream to make it compatible with the Runner."""
 
-    def __init__(self, data_stream: DataStream):
+    def __init__(self, data_stream: DataStream, live_trader: LiveTrader):
         self.data_stream = data_stream
+        self.live_trader = live_trader
 
     def tick(self):
         """This method is called by the Runner to fetch new data."""
         self.data_stream.fetch_and_notify()
+        self.live_trader.last_price_tick_submitted(current_time=datetime.now())
 
 
 class PredictionTask(Runnable):
@@ -60,7 +62,8 @@ def run_live_trading_simulation():
 
     # 1. Define the full universe of assets the predictor can choose from.
     asset_universe = [
-        'airswap', 'chainlink', 'wax', 'decentraland', 'near',
+        #'airswap',
+        'chainlink', 'wax', 'decentraland', 'near',
         'nervos-network', 'floki-inu', 'arbitrum', 'open-campus',
         'bonk', 'sui', 'dogwifcoin'
     ]
@@ -79,7 +82,7 @@ def run_live_trading_simulation():
         data_stream=data_stream,
         available_coins=asset_universe
     )
-    data_stream_task = DataStreamTask(data_stream)
+    data_stream_task = DataStreamTask(data_stream, live_trader)
 
     # 4. Subscribe the LiveTrader to receive price updates from the DataStream.
     data_stream.subscribe(live_trader)

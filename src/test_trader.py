@@ -130,9 +130,9 @@ def run_backtest():
     print("--- Starting Backtest ---")
 
     # 1. Define data directory and which coins to load for the test
-    DATA_DIRECTORY = '../coins2'
+    DATA_DIRECTORY = './assets/coin_data'
     COINS_TO_TEST = [
-        ('airswap', '669'),
+        # ('airswap', '669'),
         ('chainlink', '669'),
         ('wax', '669'),
         ('decentraland', '669'),
@@ -259,7 +259,7 @@ def run_backtest():
             api_executor=api_executor
         )
 
-    # run_simulation_joblib(0)
+    run_simulation_joblib(0)
 
     # Execution
     returns = TqdmParallel(n_jobs=-1, total=150, desc="Running simulations")(
@@ -293,4 +293,8 @@ def run_backtest():
 if __name__ == "__main__":
     # Note: This script assumes the required .pkl files
     # exist in the specified DATA_DIRECTORY.
+    from dotenv import load_dotenv
+
+    load_dotenv()
+
     run_backtest()

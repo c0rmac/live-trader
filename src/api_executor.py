@@ -11,9 +11,9 @@ class ApiExecutor:
     A class to handle the execution of trades with external exchange APIs.
     This class is designed to be a realistic implementation using the ccxt library structure.
     """
-    ALLOWED_EXCHANGES = ['binance', 'coinbase']
+    ALLOWED_EXCHANGES = ['binance']
 
-    def __init__(self, asset_universe_ids=None, simulation_mode=False, trading_fee_percent=0.001,
+    def __init__(self, asset_universe_ids=None, simulation_mode=True, trading_fee_percent=0.001,
                  slippage_percent=0.0005):
         """
         Initializes the ApiExecutor.
