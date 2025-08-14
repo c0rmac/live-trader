@@ -213,7 +213,7 @@ class LiveTrader:
             self.logger.log_event(now, 'DRY_RUN_ACTIVATED',
                                   {'reason': f'{self.dry_run_loss_threshold}_consecutive_losses'})
         else:
-            if self.dry_run_max_count >= self.dry_run_count:
+            if self.dry_run_max_count <= self.dry_run_count:
                 self.dry_run_mode = False
                 self.dry_run_count = 0
 
@@ -279,14 +279,20 @@ class LiveTrader:
         now = current_time or datetime.now()
         self._process_pending_reinvestments(current_time=now)
 
-        if 800 < self.live_budget.get_total() < 900:
-            self.dry_run_max_count = 2
-        elif 700 < self.live_budget.get_total() < 799:
-            self.dry_run_max_count = 3
-        elif 600 < self.live_budget.get_total() < 699:
-            self.dry_run_max_count = 4
-        else:
-            self.dry_run_max_count = 1
+        #if 3 > self.consecutive_cycle_losses >= 0:
+        #    self.dry_run_max_count = 1
+        #elif 6 > self.consecutive_cycle_losses >= 3:
+        #    self.dry_run_max_count = 3
+        #else: self.dry_run_max_count = 4
+
+#        if 800 < self.live_budget.get_total() < 900:
+#            self.dry_run_max_count = 2
+#        elif 700 < self.live_budget.get_total() < 799:
+#            self.dry_run_max_count = 3
+#        elif 600 < self.live_budget.get_total() < 699:
+#            self.dry_run_max_count = 4
+#        else:
+#            self.dry_run_max_count = 1
 
     def _check_for_individual_expirations(self, current_time=None):
         now = current_time or datetime.now()
@@ -426,7 +432,7 @@ class LiveTrader:
                 if not self.dry_run_mode or self.dry_run_repeats_on_loss:
                     self.activate_dry_run_next_cycle = True
 
-                self.consecutive_cycle_losses = 0
+                # self.consecutive_cycle_losses = 0
 
             self.logger.log_event(now, 'CYCLE_END', {
                 'profit': profit,

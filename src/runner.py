@@ -84,4 +84,4 @@ class Runner:
         print("Runner loop started. Waiting for scheduled tasks...")
         while True:
             schedule.run_pending()
-            time.sleep(0.5)  # Sleep briefly to be CPU-friendly
+            time.sleep(5)  # Sleep briefly to be CPU-friendly
