@@ -222,7 +222,7 @@ class DataStream:
             return
 
         print(f"Fetching latest ticks at {datetime.now().strftime('%H:%M:%S')}...")
-        now = datetime.utcnow()
+        now = datetime.now()
         # Fetch data from the last 10 minutes to ensure we get the most recent tick
         ten_minutes_ago = now - timedelta(minutes=10)
 
