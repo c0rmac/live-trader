@@ -51,6 +51,7 @@ class PredictionTask(Runnable):
 
         if self.live_trader.can_process_predictions():
             self.data_stream.update_tracked_assets(predicted_coins)
+            self.data_stream_task.tick()
         self.live_trader.process_predictions(predicted_coins)
 
 
@@ -83,6 +84,7 @@ def run_live_trading_simulation():
         available_coins=asset_universe
     )
     data_stream_task = DataStreamTask(data_stream, live_trader)
+    prediction_task.data_stream_task = data_stream_task
 
     # 4. Subscribe the LiveTrader to receive price updates from the DataStream.
     data_stream.subscribe(live_trader)
@@ -101,6 +103,7 @@ def run_live_trading_simulation():
 
     # 8. Perform an initial prediction to start the first cycle.
     print("\n--- Performing initial model prediction for demonstration ---")
+
     prediction_task.tick()
 
     # 9. Start the simulation loop.
